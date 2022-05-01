@@ -9,6 +9,18 @@ namespace assignment {
     // 2. Проверяйте наличие целевого элемента по индексам.
     // 3. Обновляйте индексы пока левый не станет больше правого.
 
+    int leftIndex = 0;
+    int rightIndex = static_cast<int>(arr.size()) - 1;
+    while(leftIndex <= rightIndex){
+        if (arr[leftIndex] == search_elem){
+            return leftIndex;
+        }
+        if (arr[rightIndex] == search_elem){
+            return rightIndex;
+        }
+        leftIndex++;
+        rightIndex--;
+      }
     return std::nullopt;
   }
 
