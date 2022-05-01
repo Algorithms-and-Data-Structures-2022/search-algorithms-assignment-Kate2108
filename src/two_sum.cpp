@@ -6,6 +6,19 @@ namespace assignment {
 
     // Tips: для создания пары (pair) используйте функцию std::make_pair
 
+    int leftIndex = 0;
+    int rightIndex = static_cast<int>(data.size()) - 1;
+    for(int i = 0; i < data.size(); i++){
+        while(leftIndex < rightIndex && rightIndex < data.size()){
+            if (data[leftIndex] + data[rightIndex] == sum){
+                return std::make_pair(leftIndex, rightIndex);
+            }
+            if  (data[leftIndex] + data[rightIndex] > sum){
+                rightIndex--;
+            }
+            else { leftIndex++; }
+        }
+    }
     return std::nullopt;
   }
 
